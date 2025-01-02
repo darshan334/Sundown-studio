@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Content Change</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 80%;
+      margin: 0 auto;
+    }
+    .headings {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+    .headings div {
+    
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .headings div:hover {
+      background-color: #007BFF;
+      color: white;
+    }
+    .content {
+      margin-top: 20px;
+    }
+    img {
+      width: 300px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="headings">
+      <div onclick="changeContent(0)">Heading 1</div>
+      <div onclick="changeContent(1)">Heading 2</div>
+      <div onclick="changeContent(2)">Heading 3</div>
+    </div>
+    <div class="content">
+      
+      <p id="text">This is the content for the first heading. It includes some text and an image below.</p>
+      
+    </div>
+    <img id="image" src="D:\Web Practice\sundown clone\Box\page4-1.webp" alt="Placeholder">
+  </div>
+
+  <script>
+    const data = [
+      {
+     
+        text: "This is the content for the first heading. It includes some text and an image below.",
+        image: "D:\Web Practice\sundown clone\Box\page4-1.webp",
+      },
+      {
+     
+        text: "This is the content for the second heading. It includes some different text and an image.",
+        image: "https://via.placeholder.com/300/FF5733/FFFFFF?text=Image+2",
+      },
+      {
+     
+        text: "This is the content for the third heading. The text and image are unique to this section.",
+        image: "https://via.placeholder.com/300/33FF57/FFFFFF?text=Image+3",
+      }
+    ];
+
+    function changeContent(index) {
+     
+      document.getElementById('text').innerText = data[index].text;
+      document.getElementById('image').src = data[index].image;
+    }
+  </script>
+</body>
+</html>

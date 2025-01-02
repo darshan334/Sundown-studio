@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100%;
+            height: 100vh;
+            color: white;
+            display: flex;
+            border-radius: 15px;
+            background-color: black; 
+        }
+        #image{
+            height: 100%;
+            width: 50%;
+            border-radius: 17px;
+            float: right;
+        }
+        .headings div{
+            background-color: aqua;
+            padding: 20px;
+            font-size: 1.5cm;
+            font-weight: 600;
+            border-left: 2px solid grey;
+            line-height: 1.5cm; 
+        }
+        .headings{
+            margin-top: 20vh;
+            margin-left: 20vh;
+        }
+        .content p{
+            background-color: blue;
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="headings">
+          <div onclick="changeContent(0)">Design</div>
+          <div onclick="changeContent(1)">Project</div>
+          <div onclick="changeContent(2)">Execution</div> 
+        </div>
+        <div class="content">          
+          <p id="text">This is the content for the first heading. It includes some text and an image below.</p>
+        </div>
+        <img id="image" src="D:\Web Practice\sundown clone\Box\page4-1.webp" alt="Placeholder">
+      </div>
+
+      <script>
+        const data = [
+          {
+         
+            text: "This is the content for the first heading. It includes some text and an image below.",
+            image: "D:\Web Practice\sundown clone\Box\page4-1.webp",
+          },
+          {
+         
+            text: "This is the content for the second heading. It includes some different text and an image.",
+            image: "https://via.placeholder.com/300/FF5733/FFFFFF?text=Image+2",
+          },
+          {
+         
+            text: "This is the content for the third heading. The text and image are unique to this section.",
+            image: "https://via.placeholder.com/300/33FF57/FFFFFF?text=Image+3",
+          }
+        ];
+    
+        function changeContent(index) {
+         
+          document.getElementById('text').innerText = data[index].text;
+          document.getElementById('image').src = data[index].image;
+        }
+      </script>
+
+
+</body>
+</html>
